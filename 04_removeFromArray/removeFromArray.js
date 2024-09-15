@@ -7,7 +7,11 @@ const removeFromArray = function(array, ...indexRemove) {
             }
         }
     }
-    for (let i = 0; i < indices.length; i++) {
+    function compareNumbers(a, b) {
+        return a - b;
+    }
+    indices.sort(compareNumbers);
+    for (let i = indices.length - 1; i >= 0; i--) {
         array.splice(indices[i], 1);
     }
     return array;
